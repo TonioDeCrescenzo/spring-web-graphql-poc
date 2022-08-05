@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "namespace": "com.adeo.cps.kafka.model.V4.identity",
+  "name": "LocalProductIdBU",
+  "fields": [
+    {
+      "type": "string",
+      "name": "bu"
+    },
+    {
+      "type": "string",
+      "name": "localProductId"
+    }
+  ]
+}

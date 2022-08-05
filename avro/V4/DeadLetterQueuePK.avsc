@@ -1,0 +1,19 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4",
+  "name": "DeadLetterQueuePK",
+  "type": "record",
+  "fields": [
+    {
+      "name": "topic",
+      "type": "string"
+    },
+    {
+      "name": "offset",
+      "type": "long"
+    },
+    {
+      "name": "sync",
+      "type": "string"
+    }
+  ]
+}

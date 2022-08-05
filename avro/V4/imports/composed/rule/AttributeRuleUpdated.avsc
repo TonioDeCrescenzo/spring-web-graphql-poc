@@ -1,0 +1,20 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.rule",
+  "name": "AttributeRuleUpdated",
+  "type": "record",
+  "fields": [
+    {
+      "name": "attributeId",
+      "type": "string"
+    },
+    {
+      "name": "attributeRuleState",
+      "doc": "Allowed values: ADDED, REMOVED",
+      "type": "string"
+    },
+    {
+      "name": "attributeValue",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.media",
+  "name": "ConvertedMedia",
+  "type": "record",
+  "fields": [
+    {
+      "name": "type",
+      "doc": "Allowed values: DOC, IMG, VID, SOU",
+      "type": "string"
+    },
+    {
+      "name": "categoryDam",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "externalId",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "accountId",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "createdDate",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "extension",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "fileName",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "format",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "isCopyrightFree",
+      "type": ["null", "boolean"]
+    },
+    {
+      "name": "isPubInternet",
+      "type": ["null", "boolean"]
+    },
+    {
+      "name": "isReference",
+      "type": ["null", "boolean"]
+    },
+    {
+      "name": "mediaId",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "pixelHeight",
+      "type": ["null", "int"]
+    },
+    {
+      "name": "pixelWidth",
+      "type": ["null", "int"]
+    },
+    {
+      "name": "pubInternetOrderIndex",
+      "type": ["null", "int"]
+    },
+    {
+      "name": "updatedDate",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "url",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "languages",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "string"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "localizedLanguages",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "string"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "metadata",
+      "type": [
+        "null",
+        {
+          "type": "map",
+          "values": [
+            "null",
+            {
+              "type": "array",
+              "items": "string"
+            }
+          ]
+        }
+      ],
+      "default": null
+    }
+  ]
+}

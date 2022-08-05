@@ -1,0 +1,17 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.merged",
+  "name": "MergedProviderProductData",
+  "type": "record",
+  "fields": [
+    {
+      "name": "properties",
+      "type": "com.adeo.cps.kafka.model.V4.properties.ProviderProductData"
+    },
+    {
+      "name": "lifecycleStatus",
+      "doc": "Allowed values: MAINTAINED, NOT_MAINTAINED",
+      "type": ["null", "string"],
+      "default": null
+    }
+  ]
+}

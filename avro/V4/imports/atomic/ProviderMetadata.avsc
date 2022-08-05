@@ -1,0 +1,16 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.merged",
+  "name": "ProviderMetadata",
+  "type": "record",
+  "fields": [
+    {
+
+      "name": "providerId",
+      "type": "string"
+    },
+    {
+      "name":"providerProductVersion",
+      "type": "string"
+    }
+  ]
+}

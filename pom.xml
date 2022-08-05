@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>poc-graphql</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <project.avroSchemas.directory>${project.basedir}/avro</project.avroSchemas.directory>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.6.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.7</version>
+        </dependency>
+        <dependency>
+            <groupId>io.leangen.graphql</groupId>
+            <artifactId>spqr</artifactId>
+            <version>0.11.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.11.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.avro</groupId>
+                <artifactId>avro-maven-plugin</artifactId>
+                <version>1.11.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>schema</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirectory>${project.avroSchemas.directory}/</sourceDirectory>
+                            <imports>
+                                <!-- V4 -->
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/AvailableGtin.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/GtinType.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/SampleLink.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/LocalProductIdBU.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/ManagementNomenclatureData.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/TranslationStringType.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/CompositionLink.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/RemovalData.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/atomic/ProviderMetadata.avsc</import>
+
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/ConvertedMedia.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/ManagementNomenclatureBU.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/ProviderProductData.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/QualityData.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/MergedProviderProductData.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/MergedProduct.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/rule/AttributeRule.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/rule/AttributeRuleUpdated.avsc</import>
+                                <import>${project.avroSchemas.directory}/V4/imports/composed/rule/ModelRuleUpdated.avsc</import>
+
+                                <import>${project.avroSchemas.directory}/V4/ProductUpdated.avsc</import>
+                            </imports>
+                            <outputDirectory>${project.build.directory}/generated-sources/src/main/java</outputDirectory>
+                            <fieldVisibility>private</fieldVisibility>
+                            <stringType>String</stringType>
+                            <enableDecimalLogicalType>true</enableDecimalLogicalType>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

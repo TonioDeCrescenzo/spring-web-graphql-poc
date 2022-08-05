@@ -1,0 +1,11 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4",
+  "name": "ProductCatalogedPK",
+  "type": "record",
+  "fields": [
+    {
+      "name": "adeoProductId",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4",
+  "name": "DeadLetterQueue",
+  "type": "record",
+  "fields": [
+    {
+      "name": "topic",
+      "type": "string"
+    },
+    {
+      "name": "offset",
+      "type": "long"
+    },
+    {
+      "name": "sync",
+      "type": "string"
+    },
+    {
+      "name": "adeoProductId",
+      "type": "string"
+    },
+    {
+      "name": "exceptionName",
+      "type": "string"
+    },
+    {
+      "name": "exceptionMessage",
+      "type": "string"
+    },
+    {
+      "name": "productKey",
+      "type": "string"
+    },
+    {
+      "name": "productValue",
+      "type": "string"
+    },
+    {
+      "name":"timestamp",
+      "type":{
+        "type":"long",
+        "logicalType":"timestamp-millis"
+      }
+    }
+  ]
+}

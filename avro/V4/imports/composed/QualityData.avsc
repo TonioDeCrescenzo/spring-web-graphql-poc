@@ -1,0 +1,40 @@
+{
+  "type":"record",
+  "name":"QualityData",
+  "namespace":"com.adeo.cps.kafka.model.V4.quality",
+  "fields": [
+    {
+      "name":"sellingArea",
+      "doc": "Allowed values: FR, IT, ZA, ES, PT, PL, RU",
+      "type":"string"
+    },
+    {
+      "name":"status",
+      "doc": "Allowed values: ANTICIP, ATT, BLO, DEROG, ETT, FOURFI, INFOMANQ, KO, NONCERT, NONREQ, NONSOU, PRECONF, OK",
+      "type":[
+        "null",
+        "string"
+      ],
+      "default":null
+    },
+    {
+      "name":"comment",
+      "type":[
+        "null",
+        "string"
+      ],
+      "default":null
+    },
+    {
+      "name":"statusDate",
+      "type": [
+        "null",
+        {
+          "type": "long",
+          "logicalType": "timestamp-millis"
+        }
+      ],
+      "default":null
+    }
+  ]
+}

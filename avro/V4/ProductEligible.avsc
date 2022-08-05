@@ -1,0 +1,62 @@
+{
+  "namespace":"com.adeo.cps.kafka.model.V4",
+  "name":"ProductEligible",
+  "type":"record",
+  "fields":[
+    {
+      "name":"adeoProductId",
+      "type":"string"
+    },
+    {
+      "name":"catalogId",
+      "type":"string"
+    },
+    {
+      "name": "label",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name":"providerMetadata",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.merged.ProviderMetadata"
+      }
+    },
+    {
+      "name":"product",
+      "type":[
+        "null",
+        "com.adeo.cps.kafka.model.V4.merged.MergedProduct"
+      ],
+      "default":null
+    },
+    {
+      "name":"discardedProduct",
+      "type": "boolean",
+      "default":false
+    },
+    {
+      "name":"removalStatus",
+      "type":[
+        "null",
+        "com.adeo.cps.kafka.model.V4.removal.RemovalData"
+      ],
+      "default":null
+    },
+    {
+      "name":"mergedTimestamp",
+      "type":{
+        "type":"long",
+        "logicalType":"timestamp-millis"
+      }
+    },
+    {
+      "name":"lastProductUpdate",
+      "type":{
+        "type":"long",
+        "logicalType":"timestamp-millis"
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "record",
+  "name": "RemovalData",
+  "namespace": "com.adeo.cps.kafka.model.V4.removal",
+  "fields": [
+    {
+      "name": "removed",
+      "type": "boolean"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "namespace":"com.adeo.cps.kafka.model.V4.properties",
+  "name":"CompositionLink",
+  "type":"record",
+  "fields":[
+    {
+      "name":"adeoProductId",
+      "type":"string"
+    },
+    {
+      "name":"quantity",
+      "type":"int",
+      "java-class":"java.lang.Integer"
+    }
+  ]
+}

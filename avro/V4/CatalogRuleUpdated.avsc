@@ -1,0 +1,101 @@
+{
+  "namespace":"com.adeo.cps.kafka.model.V4.rule",
+  "name": "CatalogRuleUpdated",
+  "type": "record",
+  "fields": [
+    {
+      "name": "attributeRules",
+      "type": {
+        "type": "array",
+        "items": "com.adeo.cps.kafka.model.V4.rule.AttributeRule"
+      }
+    },
+    {
+      "name": "attributeRulesUpdated",
+      "type": {
+        "type": "array",
+        "items": "com.adeo.cps.kafka.model.V4.rule.AttributeRuleUpdated"
+      }
+    },
+    {
+      "name": "catalogId",
+      "type": "string"
+    },
+    {
+      "name": "changeDate",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "messageDesc",
+      "type": [ "null" , "string" ],
+      "default": null
+    },
+    {
+      "name": "messageType",
+      "doc": "Allowed values: CATALOG_RULE_UPDATED",
+      "type": "string"
+    },
+    {
+      "name": "modelRulesUpdated",
+      "type": {
+        "type": "array",
+        "items": "com.adeo.cps.kafka.model.V4.rule.ModelRuleUpdated"
+      }
+    },
+    {
+      "name": "modelRuleType",
+      "doc": "Allowed values: ALLOWED, BLOCKED, NONE",
+      "type": "string"
+    },
+    {
+      "name": "models",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "imageCheckOnCatalog",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "minimalFieldsFeaturesToCheck",
+      "type": [ "null",
+        {
+          "type": "map",
+          "values" : "string"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "lifecycleCheckOnCatalog",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "strategyFeaturesToCheck",
+      "type": [ "null",
+        {
+          "type": "map",
+          "values" : "string"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "identityBuCheckOnCatalog",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "name": "nomenclatureBuCheckOnCatalog",
+      "type": "boolean",
+      "default": false
+    }
+  ]
+}

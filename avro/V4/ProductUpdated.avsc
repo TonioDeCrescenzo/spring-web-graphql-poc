@@ -1,0 +1,59 @@
+{
+  "namespace":"com.adeo.cps.kafka.model.V4",
+  "name":"ProductUpdated",
+  "type":"record",
+  "fields":  [
+    {
+      "name":"adeoProductId",
+      "type":"string"
+    },
+    {
+      "name":"catalogId",
+      "type":"string"
+    },
+    {
+      "name": "messageType",
+      "doc": "Allowed values: PRODUCT_REMOVED, PRODUCT_EMERGENCY_BLOCKED, PRODUCT_QUALITY_FILTERED, PRODUCT_MINIMAL_FIELDS_FILTERED, PRODUCT_PUBLISHABLE_FILTERED, PRODUCT_CATALOG_STRATEGY_FILTERED, PRODUCT_CATALOG_APPROVED",
+      "type": "string"
+    },
+    {
+      "name": "messageDesc",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name": "label",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name":"providerMetadata",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.merged.ProviderMetadata"
+      }
+    },
+    {
+      "name":"product",
+      "type":[
+        "null",
+        "com.adeo.cps.kafka.model.V4.merged.MergedProduct"
+      ],
+      "default":null
+    },
+    {
+      "name":"mergedTimestamp",
+      "type":{
+        "type":"long",
+        "logicalType":"timestamp-millis"
+      }
+    },
+    {
+      "name":"lastProductUpdate",
+      "type":{
+        "type":"long",
+        "logicalType":"timestamp-millis"
+      }
+    }
+  ]
+}

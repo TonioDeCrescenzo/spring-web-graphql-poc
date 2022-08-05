@@ -1,0 +1,11 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.rule",
+  "name": "CatalogRuleUpdatedPK",
+  "type": "record",
+  "fields": [
+    {
+      "name": "catalogId",
+      "type": "string"
+    }
+  ]
+}

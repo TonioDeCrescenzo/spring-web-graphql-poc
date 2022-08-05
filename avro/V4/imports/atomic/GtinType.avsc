@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "GtinType",
+  "namespace": "com.adeo.cps.kafka.model.V4.properties",
+  "fields": [
+    {
+      "name": "category",
+      "doc": "Allowed values: EAN13, ISBN, UPC, MPN, VN",
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "type": "string"
+    }
+  ]
+}

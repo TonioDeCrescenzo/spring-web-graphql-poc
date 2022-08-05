@@ -1,0 +1,23 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.rule",
+  "name": "AttributeRule",
+  "type": "record",
+  "fields": [
+    {
+      "name": "values",
+      "type": {
+        "type": "array",
+        "items": "string"
+      }
+    },
+    {
+      "name": "attributeId",
+      "type": "string"
+    },
+    {
+      "name": "ruleType",
+      "doc": "Allowed values: ALLOWED, BLOCKED, NONE",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "adeoProductId": "111",
+  "catalogId": "BMFR_WEB",
+  "messageType": "PRODUCT_CATALOG_APPROVED",
+  "messageDesc": "The product is published in a catalog",
+  "label": "Makita Perforateur Burineur Sds+ 18v Li-ion (machine Seule) - Dhr242z",
+  "providerMetadata": [
+    {
+      "providerId": "MKP",
+      "providerProductVersion": "v1"
+    },
+    {
+      "providerId": "LMIT",
+      "providerProductVersion": "v2"
+    },
+    {
+      "providerId": "LMFR",
+      "providerProductVersion": "v3"
+    },
+    {
+      "providerId": "LMPT",
+      "providerProductVersion": "v4"
+    },
+    {
+      "providerId": "LMES",
+      "providerProductVersion": "v5"
+    }
+  ],
+  "product": {
+    "providerProduct": {
+      "properties": {
+        "featuresValues": [
+          {
+            "featureId": "ATT_12963",
+            "featureValueId": null,
+            "values": [
+              {
+                "lang": "FR",
+                "localizedLanguage": "fr-FR",
+                "value": "Makita Perforateur Burineur Sds+ 18v Li-ion (machine Seule) - Dhr242z"
+              },
+              {
+                "lang": "IT",
+                "localizedLanguage": "it-IT",
+                "value": "Perforatore a scalpello Makita Sds + 18v Li-ion (solo macchina) - Dhr242z"
+              },
+              {
+                "lang": "PT",
+                "localizedLanguage": "pt-PT",
+                "value": "Martelo de perfuração Makita Sds + 18v Li-ion (somente máquina) - dhr242z"
+              },
+              {
+                "lang": "ES",
+                "localizedLanguage": "es-ES",
+                "value": "Taladro cincelador Makita Sds + 18v Li-ion (solo máquina) - Dhr242z"
+              }
+            ]
+          },
+          {
+            "featureId": "ATT_01022",
+            "featureValueId": null,
+            "values": [
+              {
+                "lang": "FR",
+                "localizedLanguage": null,
+                "value": "- MAKITA Perforateur burineur SDS+ 18V Li-Ion - Cadence de frappe 4700 cps/min - Capacités Béton/Acier/Bois: 24/13/27 mm - Puisance de frappe 2 J (machine seule) - DHR242Z"
+              },
+              {
+                "lang": "IT",
+                "localizedLanguage": null,
+                "value": "- MAKITA Perforateur burineur SDS+ 18V Li-Ion - Cadence de frappe 4700 cps/min - Capacités Béton/Acier/Bois: 24/13/27 mm - Puisance de frappe 2 J (machine seule) - DHR242Z"
+              },
+              {
+                "lang": "PT",
+                "localizedLanguage": null,
+                "value": "- MAKITA Perforateur burineur SDS+ 18V Li-Ion - Cadence de frappe 4700 cps/min - Capacités Béton/Acier/Bois: 24/13/27 mm - Puisance de frappe 2 J (machine seule) - DHR242Z"
+              },
+              {
+                "lang": "ES",
+                "localizedLanguage": null,
+                "value": "- MAKITA Perforateur burineur SDS+ 18V Li-Ion - Cadence de frappe 4700 cps/min - Capacités Béton/Acier/Bois: 24/13/27 mm - Puisance de frappe 2 J (machine seule) - DHR242Z"
+              }
+            ]
+          },
+          {
+            "featureId": "ATT_06575",
+            "featureValueId": "201630",
+            "values": [
+              {
+                "lang": "FR",
+                "localizedLanguage": "fr-FR",
+                "value": "MAKITA"
+              },
+              {
+                "lang": "IT",
+                "localizedLanguage": "it-IT",
+                "value": "MAKITA"
+              },
+              {
+                "lang": "PT",
+                "localizedLanguage": "pt-PT",
+                "value": "MAKITA"
+              },
+              {
+                "lang": "ES",
+                "localizedLanguage": "es-ES",
+                "value": "MAKITA"
+              }
+            ]
+          },
+          {
+            "featureId": "ATT_08547",
+            "featureValueId": "073403",
+            "values": [
+              {
+                "lang": "FR",
+                "localizedLanguage": "fr-FR",
+                "value": "Marteau perforateur burineur"
+              }
+            ]
+          },
+          {
+            "featureId": "ATT_98619",
+            "featureValueId": "FONRAY",
+            "values": []
+          },
+          {
+            "featureId": "ATT_03210",
+            "featureValueId": null,
+            "values": [
+              {
+                "lang": null,
+                "localizedLanguage": null,
+                "value": "2"
+              }
+            ]
+          }
+        ],
+        "enabledGtin": [
+          {
+            "category": "EAN13",
+            "value": "0088381625616"
+          },
+          {
+            "category": "EAN13",
+            "value": "8015040015985"
+          }
+        ],
+        "modelId": "MOD_200770",
+        "category": "STD",
+        "compositionLinks": null,
+        "sampleLinks": null,
+        "extraFeaturesValues":[
+          {
+            "featureId":"ATT_99676",
+            "featureName":"isNewFlag",
+            "featureValueId":null,
+            "values":[
+              {
+                "lang":null,
+                "localizedLanguage":null,
+                "value":"true"
+              }
+            ]
+          },
+          {
+            "featureId":"ATT_98831",
+            "featureName":"priceQuartile",
+            "featureValueId":null,
+            "values":[
+              {
+                "lang":null,
+                "localizedLanguage":null,
+                "value":"0"
+              }
+            ]
+          }
+        ]
+      },
+      "lifecycleStatus": "MAINTAINED"
+    },
+    "identityByBu": [
+      {
+        "bu": "LMFR",
+        "localProductId": "35963963"
+      },
+      {
+        "bu": "BMFR",
+        "localProductId": "35963963"
+      },
+      {
+        "bu": "LMIT",
+        "localProductId": "35963963"
+      },
+      {
+        "bu": "LMPT",
+        "localProductId": "35963963"
+      },
+      {
+        "bu": "LMES",
+        "localProductId": "35963963"
+      }
+    ],
+    "medias": [
+      {
+        "type": "IMG",
+        "categoryDam": "P",
+        "externalId": null,
+        "accountId": null,
+        "createdDate": "2021-04-20T15:37:37.000Z",
+        "extension": null,
+        "fileName": "d221ca58786744728356a0fe90dccaa8",
+        "format": null,
+        "isCopyrightFree": false,
+        "isPubInternet": false,
+        "isReference": false,
+        "mediaId": "cbc726deb4ccf9863fcb0f7a34fdb21b",
+        "pixelHeight": null,
+        "pixelWidth": null,
+        "pubInternetOrderIndex": null,
+        "updatedDate": "2021-04-20T15:37:37.000Z",
+        "url": "https://media-pp.adeo.com/marketplace-pp/82914647/cbc726deb4ccf9863fcb0f7a34fdb21b.jpeg",
+        "languages": [
+          "fr"
+        ],
+        "localizedLanguages": [
+          "fr-FR"
+        ],
+        "metadata": null
+      },
+      {
+        "type": "IMG",
+        "categoryDam": "P",
+        "externalId": null,
+        "accountId": null,
+        "createdDate": "2021-04-20T15:37:37.000Z",
+        "extension": null,
+        "fileName": "ef7a6238af1f4f2b9da83750f48019bd",
+        "format": null,
+        "isCopyrightFree": false,
+        "isPubInternet": false,
+        "isReference": true,
+        "mediaId": "9e7e5fea71c38544d87f58e342571750",
+        "pixelHeight": null,
+        "pixelWidth": null,
+        "pubInternetOrderIndex": null,
+        "updatedDate": "2021-04-20T15:37:37.000Z",
+        "url": "https://media-pp.adeo.com/marketplace-pp/82914647/9e7e5fea71c38544d87f58e342571750.jpeg",
+        "languages": [
+          "fr",
+          "it",
+          "pt",
+          "es"
+        ],
+        "localizedLanguages": [
+          "fr-FR"
+        ],
+        "metadata": null
+      }
+    ],
+    "nomenclatureByBu": [
+      {
+        "bu": "LMFR",
+        "managementNomenclature": {
+          "typeId": "null",
+          "departmentId": "4",
+          "subTypeId": "null",
+          "subDepartmentId": "3"
+        }
+      },
+      {
+        "bu": "LMIT",
+        "managementNomenclature": {
+          "typeId": "null",
+          "departmentId": "4",
+          "subTypeId": "null",
+          "subDepartmentId": "3"
+        }
+      },
+      {
+        "bu": "BMFR",
+        "managementNomenclature": {
+          "typeId": "null",
+          "departmentId": "4",
+          "subTypeId": "null",
+          "subDepartmentId": "3"
+        }
+      },
+      {
+        "bu": "LMPT",
+        "managementNomenclature": {
+          "typeId": "null",
+          "departmentId": "4",
+          "subTypeId": "null",
+          "subDepartmentId": "3"
+        }
+      },
+      {
+        "bu": "LMES",
+        "managementNomenclature": {
+          "typeId": "null",
+          "departmentId": "4",
+          "subTypeId": "null",
+          "subDepartmentId": "3"
+        }
+      }
+    ],
+    "productLanguages": [
+      "FR",
+      "IT",
+      "PT",
+      "ES"
+    ],
+    "qualityBySellingArea": [
+      {
+        "sellingArea": "FR",
+        "status": "OK",
+        "comment": "Presumption of conformity",
+        "statusDate": "2021-04-20T17:42:54.000Z"
+      },
+      {
+        "sellingArea": "IT",
+        "status": "OK",
+        "comment": "Presumption of conformity",
+        "statusDate": "2021-04-20T17:42:54.000Z"
+      },
+      {
+        "sellingArea": "PT",
+        "status": "OK",
+        "comment": "Presumption of conformity",
+        "statusDate": "2021-04-20T17:42:54.000Z"
+      },
+      {
+        "sellingArea": "ES",
+        "status": "OK",
+        "comment": "Presumption of conformity",
+        "statusDate": "2021-04-20T17:42:54.000Z"
+      }
+    ],
+    "sellingAreas": [
+      "IT",
+      "FR",
+      "PT",
+      "ES"
+    ],
+    "availableGtin": [
+      {
+        "category": "EAN13",
+        "value": "0088381625616"
+      },
+      {
+        "category": "EAN13",
+        "value": "8015040015985"
+      },
+      {
+        "category": "EAN13",
+        "value": "0088381625617"
+      },
+      {
+        "category": "EAN13",
+        "value": "8015040015987"
+      }
+    ]
+  },
+  "mergedTimestamp": "2020-12-16T11:00:00.000Z",
+  "lastProductUpdate": "2021-04-30T11:38:15.000Z"
+}

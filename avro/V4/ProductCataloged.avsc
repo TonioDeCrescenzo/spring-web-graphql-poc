@@ -1,0 +1,43 @@
+{
+  "namespace":"com.adeo.cps.kafka.model.V4",
+  "name":"ProductCataloged",
+  "type":"record",
+  "fields": [
+    {
+      "name":"adeoProductId",
+      "type":"string"
+    },
+    {
+      "name": "messageType",
+      "doc": "Allowed values: PRODUCT_CATALOG_APPROVED, PRODUCT_CATALOG_FILTERED",
+      "type": "string"
+    },
+    {
+      "name": "label",
+      "type": ["null","string"],
+      "default": null
+    },
+    {
+      "name":"providerMetadata",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.merged.ProviderMetadata"
+      }
+    },
+    {
+      "name":"product",
+      "type":[
+        "null",
+        "com.adeo.cps.kafka.model.V4.merged.MergedProduct"
+      ],
+      "default":null
+    },
+    {
+      "name":"mergedTimestamp",
+      "type":{
+        "type":"long",
+        "logicalType":"timestamp-millis"
+      }
+    }
+  ]
+}

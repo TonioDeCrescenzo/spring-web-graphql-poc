@@ -1,0 +1,21 @@
+{
+  "type": "record",
+  "name": "TranslationStringType",
+  "namespace": "com.adeo.cps.kafka.model.V4.utils",
+  "fields": [
+    {
+      "name": "lang",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "localizedLanguage",
+      "type": ["null", "string"],
+      "default": null
+    },
+    {
+      "name": "value",
+      "type": ["null", "string"],
+      "default": null
+    }
+  ]
+}

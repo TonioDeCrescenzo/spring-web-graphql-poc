@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "f6191841-c349-42cf-91d7-1a9c260dfc1a",
+		"name": "poc-graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FindOne",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    adeoProductId\n    catalogId\n    messageType\n    providerMetadata {\n        providerId\n    }\n    product {\n        availableGtin {\n            category\n            value\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/one/by/:adeoProductId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"one",
+						"by",
+						":adeoProductId"
+					],
+					"variable": [
+						{
+							"key": "adeoProductId",
+							"value": "111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    adeoProductId\n    catalogId\n    messageType\n    providerMetadata {\n        providerId\n    }\n    product {\n        availableGtin {\n            category\n            value\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/all/by/:adeoProductId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"all",
+						"by",
+						":adeoProductId"
+					],
+					"variable": [
+						{
+							"key": "adeoProductId",
+							"value": "111"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

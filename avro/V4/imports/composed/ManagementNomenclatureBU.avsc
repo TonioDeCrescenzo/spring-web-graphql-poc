@@ -1,0 +1,15 @@
+{
+  "type":"record",
+  "namespace":"com.adeo.cps.kafka.model.V4.nomenclature",
+  "name":"ManagementNomenclatureBU",
+  "fields":[
+    {
+      "type":"string",
+      "name":"bu"
+    },
+    {
+      "type":"com.adeo.cps.kafka.model.V4.nomenclature.ManagementNomenclatureData",
+      "name":"managementNomenclature"
+    }
+  ]
+}

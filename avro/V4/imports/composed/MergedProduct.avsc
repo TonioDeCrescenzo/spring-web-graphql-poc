@@ -1,0 +1,65 @@
+{
+  "namespace": "com.adeo.cps.kafka.model.V4.merged",
+  "name": "MergedProduct",
+  "type": "record",
+  "fields": [
+    {
+      "name":"providerProduct",
+      "type":"com.adeo.cps.kafka.model.V4.merged.MergedProviderProductData"
+    },
+    {
+      "name":"identityByBu",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.identity.LocalProductIdBU"
+      }
+    },
+    {
+      "name":"medias",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.media.ConvertedMedia"
+      }
+    },
+    {
+      "name":"nomenclatureByBu",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.nomenclature.ManagementNomenclatureBU"
+      }
+    },
+    {
+      "name":"productLanguages",
+      "type":{
+        "type":"array",
+        "items":"string"
+      }
+    },
+    {
+      "name":"qualityBySellingArea",
+      "type":{
+        "type":"array",
+        "items":"com.adeo.cps.kafka.model.V4.quality.QualityData"
+      }
+    },
+    {
+      "name":"sellingAreas",
+      "type":{
+        "type":"array",
+        "doc": "Allowed values: FR, IT, ZA, ES, PT, PL, RU",
+        "items":"string"
+      }
+    },
+    {
+      "name":"availableGtin",
+      "type":[
+        "null",
+        {
+          "type":"array",
+          "items":"com.adeo.cps.kafka.model.V4.gtin.AvailableGtin"
+        }
+      ],
+      "default":null
+    }
+  ]
+}

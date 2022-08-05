@@ -1,0 +1,134 @@
+{
+  "type": "record",
+  "name": "ProviderProductData",
+  "namespace": "com.adeo.cps.kafka.model.V4.properties",
+  "fields": [
+    {
+      "name": "featuresValues",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "namespace": "com.adeo.cps.kafka.model.V4.properties",
+            "name": "FeatureValue",
+            "fields": [
+              {
+                "name": "featureId",
+                "type": ["null", "string"]
+              },
+              {
+                "name": "featureValueId",
+                "type": ["null", "string"],
+                "default": null
+              },
+              {
+                "name": "values",
+                "type": [
+                  "null",
+                  {
+                    "type": "array",
+                    "items": [
+                      "null",
+                      "com.adeo.cps.kafka.model.V4.utils.TranslationStringType"
+                    ]
+                  }
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "enabledGtin",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": ["null", "com.adeo.cps.kafka.model.V4.properties.GtinType"]
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "modelId",
+      "type": "string"
+    },
+    {
+      "name": "category",
+      "type": "string"
+    },
+    {
+      "name": "compositionLinks",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "com.adeo.cps.kafka.model.V4.properties.CompositionLink"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "sampleLinks",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "com.adeo.cps.kafka.model.V4.properties.SampleLink"
+        }
+      ],
+      "default": null
+    },
+    {
+      "name": "extraFeaturesValues",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": {
+            "type": "record",
+            "namespace": "com.adeo.cps.kafka.model.V4.properties",
+            "name": "ExtraFeatureValue",
+            "fields": [
+              {
+                "name": "featureId",
+                "type": ["null", "string"],
+                "default": null
+              },
+              {
+                "name": "featureName",
+                "type": ["null", "string"],
+                "default": null
+              },
+              {
+                "name": "featureValueId",
+                "type": ["null", "string"],
+                "default": null
+              },
+              {
+                "name": "values",
+                "type": [
+                  "null",
+                  {
+                    "type": "array",
+                    "items": [
+                      "null",
+                      "com.adeo.cps.kafka.model.V4.utils.TranslationStringType"
+                    ]
+                  }
+                ],
+                "default": null
+              }
+            ]
+          }
+        }
+      ],
+      "default": null
+    }
+  ]
+}
