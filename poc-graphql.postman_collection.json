@@ -1,18 +1,19 @@
 {
 	"info": {
-		"_postman_id": "f6191841-c349-42cf-91d7-1a9c260dfc1a",
+		"_postman_id": "de434bd0-dc2d-4de6-8bd6-f6b09ac47b24",
 		"name": "poc-graphql",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18601169"
 	},
 	"item": [
 		{
-			"name": "FindOne",
+			"name": "FindOne (catalogId: BMFR_WEB, adeoProductId: 111 )",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n    adeoProductId\n    catalogId\n    messageType\n    providerMetadata {\n        providerId\n    }\n    product {\n        availableGtin {\n            category\n            value\n        }\n    }\n}",
+					"raw": "{ \n    messageType\n    product {\n        availableGtin {\n            value\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "text"
@@ -20,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/one/by/:adeoProductId",
+					"raw": "http://localhost:8080/one/by/:catalogId/:adeoProductId",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,9 +30,14 @@
 					"path": [
 						"one",
 						"by",
+						":catalogId",
 						":adeoProductId"
 					],
 					"variable": [
+						{
+							"key": "catalogId",
+							"value": "BMFR_WEB"
+						},
 						{
 							"key": "adeoProductId",
 							"value": "111"
@@ -42,13 +48,13 @@
 			"response": []
 		},
 		{
-			"name": "FindAll",
+			"name": "FindAll ( catalogId: BMFR_WEB, gtins: 0088381625616,8015040015985,0088381625617,8015040015987 )",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n    adeoProductId\n    catalogId\n    messageType\n    providerMetadata {\n        providerId\n    }\n    product {\n        availableGtin {\n            category\n            value\n        }\n    }\n}",
+					"raw": "{ \n    messageType\n    messageDesc\n    lastProductUpdate\n}",
 					"options": {
 						"raw": {
 							"language": "text"
@@ -56,7 +62,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/all/by/:adeoProductId",
+					"raw": "http://localhost:8080/all/by/:catalogId?gtins=0088381625616,8015040015985,0088381625617,8015040015987",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -65,12 +71,18 @@
 					"path": [
 						"all",
 						"by",
-						":adeoProductId"
+						":catalogId"
+					],
+					"query": [
+						{
+							"key": "gtins",
+							"value": "0088381625616,8015040015985,0088381625617,8015040015987"
+						}
 					],
 					"variable": [
 						{
-							"key": "adeoProductId",
-							"value": "111"
+							"key": "catalogId",
+							"value": "BMFR_WEB"
 						}
 					]
 				}

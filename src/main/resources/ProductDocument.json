@@ -1,6 +1,8 @@
 {
-  "adeoProductId": "111",
-  "catalogId": "BMFR_WEB",
+  "productDocumentPK" : {
+    "catalogId" : "BMFR_WEB",
+    "adeoProductId" : "111"
+  },
   "messageType": "PRODUCT_CATALOG_APPROVED",
   "messageDesc": "The product is published in a catalog",
   "label": "Makita Perforateur Burineur Sds+ 18v Li-ion (machine Seule) - Dhr242z",

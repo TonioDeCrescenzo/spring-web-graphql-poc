@@ -2,38 +2,30 @@ package poc.spring.avro.graphql;
 
 import com.adeo.cps.kafka.model.V4.merged.MergedProduct;
 import com.adeo.cps.kafka.model.V4.merged.ProviderMetadata;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 import java.util.List;
 
-public class Dto {
+@Document(collection = "product")
+public class MongoDocument {
+  @Id
+  MongoDocumentPK productDocumentPK;
 
-  private String catalogId;
+  String messageType;
+  String messageDesc;
+  String label;
+  List<ProviderMetadata> providerMetadata;
+  MergedProduct product;
+  Instant mergedTimestamp;
+  Instant lastProductUpdate;
 
-  private String adeoProductId;
-
-  private String messageType;
-
-  private String messageDesc;
-
-  private String label;
-
-  private List<ProviderMetadata> providerMetadata;
-
-  private MergedProduct product;
-
-  private Instant mergedTimestamp;
-
-  private Instant lastProductUpdate;
-
-  public Dto() {
+  public MongoDocument() {
   }
 
-  public Dto(String catalogId, String adeoProductId, String messageType,
-             String messageDesc, String label, List<ProviderMetadata> providerMetadata,
-             MergedProduct product, Instant mergedTimestamp, Instant lastProductUpdate) {
-    this.catalogId = catalogId;
-    this.adeoProductId = adeoProductId;
+  public MongoDocument(MongoDocumentPK productDocumentPK, String messageType, String messageDesc, String label, List<ProviderMetadata> providerMetadata, MergedProduct product, Instant mergedTimestamp, Instant lastProductUpdate) {
+    this.productDocumentPK = productDocumentPK;
     this.messageType = messageType;
     this.messageDesc = messageDesc;
     this.label = label;
@@ -43,20 +35,12 @@ public class Dto {
     this.lastProductUpdate = lastProductUpdate;
   }
 
-  public String getCatalogId() {
-    return catalogId;
+  public MongoDocumentPK getProductDocumentPK() {
+    return productDocumentPK;
   }
 
-  public void setCatalogId(String catalogId) {
-    this.catalogId = catalogId;
-  }
-
-  public String getAdeoProductId() {
-    return adeoProductId;
-  }
-
-  public void setAdeoProductId(String adeoProductId) {
-    this.adeoProductId = adeoProductId;
+  public void setProductDocumentPK(MongoDocumentPK productDocumentPK) {
+    this.productDocumentPK = productDocumentPK;
   }
 
   public String getMessageType() {
