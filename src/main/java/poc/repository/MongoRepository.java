@@ -1,13 +1,11 @@
-package poc.spring.avro.graphql.repository;
+package poc.repository;
 
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-import org.springframework.stereotype.Repository;
-import poc.spring.avro.graphql.MongoDocument;
-import poc.spring.avro.graphql.MongoDocumentPK;
+import poc.MongoDocument;
+import poc.MongoDocumentPK;
 import reactor.core.publisher.Mono;
 
-@Repository
 public interface MongoRepository
     extends ReactiveMongoRepository<MongoDocument, MongoDocumentPK>, CustomMongoRepository {
   

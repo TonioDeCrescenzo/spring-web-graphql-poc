@@ -1,4 +1,4 @@
-package poc.spring.avro.graphql.util;
+package poc.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

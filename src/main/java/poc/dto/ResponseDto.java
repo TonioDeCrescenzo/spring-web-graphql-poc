@@ -1,4 +1,4 @@
-package poc.spring.avro.graphql;
+package poc.dto;
 
 import com.adeo.cps.kafka.model.V4.merged.MergedProduct;
 import com.adeo.cps.kafka.model.V4.merged.ProviderMetadata;
@@ -6,7 +6,7 @@ import com.adeo.cps.kafka.model.V4.merged.ProviderMetadata;
 import java.time.Instant;
 import java.util.List;
 
-public class Dto {
+public class ResponseDto {
 
   private String catalogId;
 
@@ -26,12 +26,12 @@ public class Dto {
 
   private Instant lastProductUpdate;
 
-  public Dto() {
+  public ResponseDto() {
   }
 
-  public Dto(String catalogId, String adeoProductId, String messageType,
-             String messageDesc, String label, List<ProviderMetadata> providerMetadata,
-             MergedProduct product, Instant mergedTimestamp, Instant lastProductUpdate) {
+  public ResponseDto(String catalogId, String adeoProductId, String messageType,
+                     String messageDesc, String label, List<ProviderMetadata> providerMetadata,
+                     MergedProduct product, Instant mergedTimestamp, Instant lastProductUpdate) {
     this.catalogId = catalogId;
     this.adeoProductId = adeoProductId;
     this.messageType = messageType;

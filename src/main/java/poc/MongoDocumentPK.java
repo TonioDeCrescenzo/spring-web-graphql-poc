@@ -1,4 +1,4 @@
-package poc.spring.avro.graphql;
+package poc;
 
 import java.io.Serializable;
 public class MongoDocumentPK implements Serializable {

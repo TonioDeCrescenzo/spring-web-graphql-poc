@@ -1,4 +1,4 @@
-package poc.spring.avro.graphql;
+package poc;
 
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,10 +10,11 @@ import org.apache.avro.specific.SpecificData;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = EmbeddedMongoAutoConfiguration.class)
 public class MainSpringApplication {
 
   @JsonIgnoreProperties(ignoreUnknown = true)

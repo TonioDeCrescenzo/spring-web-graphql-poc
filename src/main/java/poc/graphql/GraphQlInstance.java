@@ -1,4 +1,4 @@
-package poc.spring.avro.graphql.util;
+package poc.graphql;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import graphql.ExecutionInput;
@@ -7,6 +7,8 @@ import graphql.execution.AsyncExecutionStrategy;
 import graphql.scalars.ExtendedScalars;
 import graphql.schema.*;
 import org.apache.avro.Schema;
+import poc.graphql.exception.EmptyResultSetException;
+import poc.graphql.exception.UnexpectedException;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -17,20 +19,21 @@ import java.util.stream.Collectors;
 
 import static graphql.Scalars.*;
 import static graphql.schema.GraphQLCodeRegistry.newCodeRegistry;
+import static poc.graphql.util.QueryNotationMapper.toGraphNotation;
 
 public class GraphQlInstance {
   public record QueryInfo<T,S>(String name, Class<T> outputType, DataFetcher<S> dataFetcher){
   }
   
   private final ObjectMapper objectMapper;
-  private final Map<String,GraphQLOutputType> customOutputTypes = new HashMap<>();
-  private final GraphQL INSTANCE;
-  
-  public GraphQlInstance(Set<QueryInfo<?,?>> queryInfos, ObjectMapper objectMapper){
+  private final Map<String,GraphQLObjectType> customOutputTypes = new HashMap<>();
+  private final GraphQL instance;
+
+  public GraphQlInstance(Set<QueryInfo<?,?>> queryInfo, ObjectMapper objectMapper){
     this.objectMapper = objectMapper;
     
     // create GRAPHQL OBJECTS starting from the query output type defined in the query info
-    queryInfos.stream()
+    queryInfo.stream()
         .map(QueryInfo::outputType)
         .collect(Collectors.toSet())
         .forEach(this::createAndRegisterGraphQlObject);
@@ -40,10 +43,10 @@ public class GraphQlInstance {
     var queryObjectType = GraphQLObjectType.newObject()
         .name("Data")
         .fields(
-            queryInfos.stream().map(queryInfo ->
+            queryInfo.stream().map(query ->
                 GraphQLFieldDefinition.newFieldDefinition()
-                    .name(queryInfo.name())
-                    .type(getOutputTypeReference(queryInfo.outputType()))
+                    .name(query.name())
+                    .type(getOutputTypeReference(query.outputType()))
                     .build()
             ).toList()
         ).build();
@@ -52,35 +55,37 @@ public class GraphQlInstance {
     GraphQLCodeRegistry codeRegistry = newCodeRegistry()
         .dataFetchers(
             "Data",
-            queryInfos.stream()
+            queryInfo.stream()
                 .collect(Collectors.toMap(QueryInfo::name,QueryInfo::dataFetcher))
         ).build();
     
     // Build GRAPHQL SCHEMA using graphql objects, query and data fetcher defined
-    var schema = GraphQLSchema.newSchema()
+    GraphQLSchema schema = GraphQLSchema.newSchema()
         .additionalTypes(Set.copyOf(customOutputTypes.values()))
         .query(queryObjectType)
         .codeRegistry(codeRegistry)
         .build();
     // Build GRAPH INSTANCE from the defined schema
-    INSTANCE = GraphQL.newGraphQL(schema)
+    instance = GraphQL.newGraphQL(schema)
         .queryExecutionStrategy(new AsyncExecutionStrategy())
         .build();
   }
   
-  public <T> T executeGraphQlQuery(String name, String outputFields, Map<String,Object> parameters, Class<T> returnType){
-    
-    var result = INSTANCE.execute(
+  public <T> T executeGraphQlQuery(String name, List<String> outputFields, Map<String,Object> parameters, Class<T> returnType){
+
+    var result = instance.execute(
         ExecutionInput.newExecutionInput()
             .query(
-                String.format("query { %s %s }", name, outputFields)
+                String.format("query { %s %s }",
+                    name,
+                    toGraphNotation(outputFields,customOutputTypes.get(getClassName(returnType))))
             )
             .graphQLContext(parameters)
             .build()
     );
     
     if (!result.getErrors().isEmpty()){
-      throw new RuntimeException(result.getErrors().toString());
+        throw new UnexpectedException(result.getErrors());
     }
     
     if (result.isDataPresent()){
@@ -90,7 +95,7 @@ public class GraphQlInstance {
       );
     }
     
-    throw new RuntimeException("Not found");
+    throw new EmptyResultSetException();
   }
   
   private String createAndRegisterGraphQlObject(Class<?> clazz){
@@ -163,5 +168,4 @@ public class GraphQlInstance {
   private Field[] getDeclaredFields(Class<?> clazz){
     return (clazz.isArray() ? clazz.getComponentType() : clazz).getDeclaredFields();
   }
-  
 }

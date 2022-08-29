@@ -1,14 +1,17 @@
-package poc.spring.avro.graphql;
+package poc;
 
 import com.adeo.cps.kafka.model.V4.merged.MergedProduct;
 import com.adeo.cps.kafka.model.V4.merged.ProviderMetadata;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 import java.util.List;
 
 @Document(collection = "product")
+@CompoundIndex(name = "byCatalogIdAndGtinIndex", def = "{'_id.catalogId': 1, 'product.availableGtin.value': 1}")
+
 public class MongoDocument {
   @Id
   MongoDocumentPK productDocumentPK;
