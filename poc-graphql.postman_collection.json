@@ -13,15 +13,15 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n    messageType\n    product {\n        availableGtin {\n            value\n        }\n    }\n}",
+					"raw": "{ \n   \"catalogId\": \"BMFR_WEB\",\n   \"adeoProductId\": \"111\",\n   \"getFromResponse\": []\n}",
 					"options": {
 						"raw": {
-							"language": "text"
+							"language": "json"
 						}
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/one/by/:catalogId/:adeoProductId",
+					"raw": "http://localhost:8080/one/by/adeoId",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,18 +30,7 @@
 					"path": [
 						"one",
 						"by",
-						":catalogId",
-						":adeoProductId"
-					],
-					"variable": [
-						{
-							"key": "catalogId",
-							"value": "BMFR_WEB"
-						},
-						{
-							"key": "adeoProductId",
-							"value": "111"
-						}
+						"adeoId"
 					]
 				}
 			},
@@ -54,15 +43,15 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \n    messageType\n    messageDesc\n    lastProductUpdate\n}",
+					"raw": "{ \n   \"catalogId\": \"BMFR_WEB\",\n   \"gtins\": [\"0088381625616\",\"8015040015985\",\"0088381625617\",\"8015040015987\"],\n   \"getFromResponse\": [\"messageType\",\"providerMetadata.providerId\",\"product.availableGtin\"]\n}",
 					"options": {
 						"raw": {
-							"language": "text"
+							"language": "json"
 						}
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/all/by/:catalogId?gtins=0088381625616,8015040015985,0088381625617,8015040015987",
+					"raw": "http://localhost:8080/all/by/gtins",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -71,19 +60,7 @@
 					"path": [
 						"all",
 						"by",
-						":catalogId"
-					],
-					"query": [
-						{
-							"key": "gtins",
-							"value": "0088381625616,8015040015985,0088381625617,8015040015987"
-						}
-					],
-					"variable": [
-						{
-							"key": "catalogId",
-							"value": "BMFR_WEB"
-						}
+						"gtins"
 					]
 				}
 			},
