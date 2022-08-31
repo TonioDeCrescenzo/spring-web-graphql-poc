@@ -32,7 +32,7 @@ import java.util.Collections;
 @Configuration
 @EnableReactiveMongoRepositories(basePackages = "poc.repository")
 public class MongoConfig implements InitializingBean, DisposableBean {
-  private static final String DB_NAME = "poc";
+  private static final String DB_NAME = "cps-dev";
   private MongodExecutable executable;
 
   private final Boolean embeddedEnabled;

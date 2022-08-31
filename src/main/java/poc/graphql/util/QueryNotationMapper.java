@@ -54,13 +54,13 @@ public final class QueryNotationMapper {
 
   private static String validateAndCompleteQuery(GraphQLObjectType type, String field, List<String> errors){
     var splitDotNotation = field.split("\\.",2);
-    var fieldType = type.getChildren().stream()
+    var childOutputType = type.getChildren().stream()
         .map(GraphQLFieldDefinition.class::cast)
         .filter(graphField -> graphField.getName().equals(splitDotNotation[0]))
         .map(GraphQLFieldDefinition::getType)
         .findFirst();
 
-    if(fieldType.isEmpty()){
+    if(childOutputType.isEmpty()){
       // Custom exception because this field name doesn't exist
       errors.add(
           String.format("Field '%s' not found in '%s' object",
@@ -68,13 +68,17 @@ public final class QueryNotationMapper {
       return Strings.EMPTY;
     }
 
+    var fieldType = GraphQLTypeUtil.isList(childOutputType.get()) ?
+        GraphQLTypeUtil.unwrapOne(childOutputType.get()) :
+        childOutputType.get();
+
     // if it is a scalar type then return its name
-    if (GraphQLTypeUtil.isScalar(fieldType.get())){
+    if (GraphQLTypeUtil.isScalar(fieldType)){
       return splitDotNotation[0];
     }
 
     String innerQuery;
-    GraphQLObjectType objType = GraphQLTypeUtil.unwrapOneAs(fieldType.get());
+    GraphQLObjectType objType = GraphQLTypeUtil.unwrapOneAs(fieldType);
     // otherwise is an object then if is specified a child validate and complete it
     if (splitDotNotation.length > 1){
       innerQuery = validateAndCompleteQuery(objType, splitDotNotation[1], errors);

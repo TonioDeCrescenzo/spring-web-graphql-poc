@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.Instant;
 import java.util.List;
 
-@Document(collection = "product")
+@Document(collection = "products")
 @CompoundIndex(name = "byCatalogIdAndGtinIndex", def = "{'_id.catalogId': 1, 'product.availableGtin.value': 1}")
 
 public class MongoDocument {
