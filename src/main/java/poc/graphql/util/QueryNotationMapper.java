@@ -3,6 +3,7 @@ package poc.graphql.util;
 import graphql.com.google.common.collect.Streams;
 import graphql.schema.*;
 import org.apache.logging.log4j.util.Strings;
+import org.springframework.util.CollectionUtils;
 import poc.graphql.exception.QuerySelectionException;
 
 import java.util.ArrayList;
@@ -23,12 +24,8 @@ public final class QueryNotationMapper {
 
   public static String toGraphNotation(List<String> selection, GraphQLObjectType rootType){
     List<String> errors = new ArrayList<>();
-
-    if(Objects.isNull(selection) || selection.isEmpty()){
-      selection = rootType.getChildren().stream()
-          .map(GraphQLFieldDefinition.class::cast)
-          .map(GraphQLFieldDefinition::getName)
-          .toList();
+    if(CollectionUtils.isEmpty(selection)){
+      errors.add("'getFromResponse' cannot contain 'null' or 'empty' strings ( n. %s ).");
     }
 
     var graphQlNotation = String.format("{ %s }",
